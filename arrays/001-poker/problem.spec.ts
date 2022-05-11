@@ -1,8 +1,8 @@
-const { detectYoungestPlayer, detectOldestPlayer, input1, input2 } = require("./problem");
+const { detectYoungestPlayer, detectOldestPlayer, input1, input2 } = require('./problem');
 
-const detectYoungestPlayerOutput = "Cel mai tanar are 14 ani";
-const detectYoungestPlayerOutput2 = "Cel mai tanar are 11 ani";
-const detectOldestPlayerOutput = "Cel mai batran are 19 ani";
+const detectYoungestPlayerOutput = 'Cel mai tanar are 14 ani';
+const detectYoungestPlayerOutput2 = 'Cel mai tanar are 11 ani';
+const detectOldestPlayerOutput = 'Cel mai batran are 19 ani';
 
 test(`[${input1}] should output "${detectYoungestPlayerOutput}"`, () => {
   expect(detectYoungestPlayer(input1)).toBe(detectYoungestPlayerOutput);
@@ -19,4 +19,3 @@ test(`[${input1}] should output "${detectOldestPlayerOutput}"`, () => {
 test(`[${input2}] should output "${detectOldestPlayerOutput}"`, () => {
   expect(detectOldestPlayer(input2)).toBe(detectOldestPlayerOutput);
 });
-

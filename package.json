@@ -1,0 +1,36 @@
+{
+  "name": "juniori-pe-javascript",
+  "version": "1.0.0",
+  "description": "Mai jos ai cele mai utile comenzi de git",
+  "main": "index.js",
+  "scripts": {
+    "test-001-poker": "jest ./arrays/001-poker",
+    "test-002-vaccinati": "jest ./arrays/002-vaccinati",
+    "test-003-cap-pajura": "jest ./arrays/003-cap-pajura",
+    "test-004-zaruri": "jest ./arrays/004-zaruri",
+    "test-005-cumparaturi": "jest ./arrays/005-cumparaturi",
+    "test-006-baterie-externa": "jest ./arrays/006-baterie-externa",
+    "test-007-cheta-scoala": "jest ./arrays/007-cheta-scoala",
+    "test-008-kemps": "jest ./arrays/008-kemps",
+    "test-009-mortal-kombat": "jest ./arrays/009-mortal-kombat"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vestemeansorin91/juniori-pe-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vestemeansorin91/juniori-pe-javascript/issues"
+  },
+  "homepage": "https://github.com/vestemeansorin91/juniori-pe-javascript#readme",
+  "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "@types/node": "^17.0.31",
+    "jest": "^28.1.0"
+  },
+  "dependencies": {
+    "prettier": "^2.6.2"
+  }
+}
