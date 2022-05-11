@@ -17,3 +17,8 @@
         Mirel nu ti-ai incarcat deloc telefonul!
         Darius nu ti-ai incarcat deloc telefonul!
 */
+
+debugger;
+
+console.log('Hello 1');
+console.log('Hello 2');
