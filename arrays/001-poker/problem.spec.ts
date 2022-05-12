@@ -19,3 +19,7 @@ test(`[${input1}] should output "${detectOldestPlayerOutput}"`, () => {
 test(`[${input2}] should output "${detectOldestPlayerOutput}"`, () => {
   expect(detectOldestPlayer(input2)).toBe(detectOldestPlayerOutput);
 });
+
+test(`[11,19,59,92,41] should output "Cel mai batran are 92 ani"`, () => {
+  expect(detectOldestPlayer([11, 19, 59, 92, 41])).toBe('Cel mai batran are 92 ani');
+});

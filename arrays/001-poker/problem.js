@@ -16,11 +16,24 @@ const input1 = [16, 15, 19, 14, 18];
 const input2 = [16, 14, 17, 19, 11];
 
 function detectYoungestPlayer(arr) {
-  return 'Cel mai tanar are 14 ani';
+  let minimumAge = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (minimumAge > arr[i]) {
+      minimumAge = arr[i];
+    }
+  }
+  return 'Cel mai tanar are ' + minimumAge + ' ani';
 }
 
 function detectOldestPlayer(arr) {
-  return 'Cel mai batran are 19 ani';
+  let maximumAge = arr[0];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (maximumAge < arr[i]) {
+      maximumAge = arr[i];
+    }
+  }
+  return 'Cel mai batran are ' + maximumAge + ' ani';
 }
 
 module.exports = { detectYoungestPlayer, detectOldestPlayer, input1, input2 };
