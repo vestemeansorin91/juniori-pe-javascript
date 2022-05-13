@@ -12,7 +12,9 @@
     "test-006-baterie-externa": "jest ./arrays/006-baterie-externa",
     "test-007-cheta-scoala": "jest ./arrays/007-cheta-scoala",
     "test-008-kemps": "jest ./arrays/008-kemps",
-    "test-009-mortal-kombat": "jest ./arrays/009-mortal-kombat"
+    "test-009-mortal-kombat": "jest ./arrays/009-mortal-kombat",
+    "test-010-magicianul": "jest ./arrays/010-magicianul",
+    "test-011-autobuz": "jest ./arrays/011-autobuz"
   },
   "repository": {
     "type": "git",
