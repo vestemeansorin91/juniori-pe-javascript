@@ -6,8 +6,11 @@
 
     Jocul se incheie cand unul dintre jucatori pierde
 
+    const player1 = 1000;
+    const player2 = 1000;
+    
     INPUT
-        playGame();
+        playGame(player1,player2);
 
     OUTPUT
         Jucatorul 1 a castigat cu 16 viata ramasa

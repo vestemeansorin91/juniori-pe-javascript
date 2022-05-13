@@ -9,4 +9,5 @@
         10 de inima rosie
         J de inima neagra
         Q de romb
+
 */
