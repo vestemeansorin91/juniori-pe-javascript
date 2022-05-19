@@ -26,7 +26,47 @@
     Dan
 
     Vio sta pe banca
-
     
   prepareFootballGame(players);
 */
+console.clear();
+console.log('--------');
+const players = ['Sorin', 'Dan', 'Camelia', 'Mitrache', 'Bogdan', 'Teo', 'Vio', 'Costel', 'Cornel'];
+
+prepareFootballGame(players);
+
+function prepareFootballGame(arr) {
+  const isOdd = arr.length % 2 !== 0;
+
+  console.log(`${pullRandomPlayer(arr)} este capitan in echipa 1`);
+  console.log(`${pullRandomPlayer(arr)} este capitan in echipa 2`);
+  console.log(`\n`);
+
+  const howManyPlayerPerTeam = Math.floor(arr.length / 2);
+
+  console.log(`Echipa 1 este formata din:`);
+
+  for (let i = 0; i < howManyPlayerPerTeam; i++) {
+    console.log(`${pullRandomPlayer(arr)}`);
+  }
+  console.log(`\n`);
+
+  console.log(`Echipa 2 este formata din:`);
+  for (let i = 0; i < howManyPlayerPerTeam; i++) {
+    console.log(`${pullRandomPlayer(arr)}`);
+  }
+  console.log(`\n`);
+
+  if (isOdd) {
+    console.log(`${pullRandomPlayer(arr)} sta pe banca`);
+  }
+}
+
+function pullRandomPlayer(arr) {
+  const randomIndex = randomPlayerGenerator(arr.length);
+  return arr.splice(randomIndex, 1)[0];
+}
+
+function randomPlayerGenerator(dimension) {
+  return Math.floor(Math.random() * dimension);
+}

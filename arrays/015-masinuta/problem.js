@@ -26,10 +26,28 @@
 
     IMPORTANT: Vreau sa vad o singura linie in consola, nu alea 15 de mai sus. Bafta!
 */
-const INTERVAL_DELAY = 500;
+const INTERVAL_DELAY = 50;
+const road = [];
 
 function goCarGo() {
-  console.log('--------------🚗');
+  console.clear();
+  const car = '🚗';
+
+  if (road.length === 0) {
+    /* Build road */
+    for (let i = 0; i < 15; i++) {
+      road.push('-');
+    }
+
+    /* Place the car in the array*/
+    road[road.length - 1] = car;
+  }
+
+  /* Moving the car...*/
+  const piece = road.shift();
+  road.push(piece);
+
+  console.log(road.join(''));
 }
 
 setInterval(goCarGo, INTERVAL_DELAY);
