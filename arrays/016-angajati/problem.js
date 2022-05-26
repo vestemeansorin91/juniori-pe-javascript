@@ -28,13 +28,27 @@
 
 let employees = [];
 
+let employeeCounter = 1;
+
 let employee = {
-  // completati aici
+  id: employeeCounter,
+  name: 'Sorin Vestemean',
+  isActive: true,
+  location: 'Romania',
+  role: 'Admin'
 };
 
-function getEmployees() {}
+createEmployee(employee);
+createEmployee(employee);
+getEmployees();
 
-function createEmployee(employee) {}
+function createEmployee(employee) {
+  employees.push(employee);
+  employeeCounter++;
+}
+function getEmployees() {
+  console.log(employees);
+}
 
 function updateEmployee(employeeId, employee) {}
 

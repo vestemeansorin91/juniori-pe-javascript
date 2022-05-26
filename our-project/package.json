@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "name": "our-project",
+  "version": "1.0.0",
+  "description": "Aplicatie pentru juniori",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sorin Vestemean",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "nodemon": "^2.0.16"
+  }
+}
