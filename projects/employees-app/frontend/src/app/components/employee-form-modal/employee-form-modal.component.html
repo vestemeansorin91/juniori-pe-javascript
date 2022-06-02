@@ -1,0 +1,78 @@
+<div class="flex--column">
+  <h2 *ngIf="!data.onEditMode" class="text--center">Creeaza angajat</h2>
+  <h2 *ngIf="data.onEditMode" class="text--center">Modifica angajat</h2>
+
+  <form [formGroup]="employeeFormGroup" class="flex--column">
+    <mat-form-field appearance="fill">
+      <mat-label>Nume complet</mat-label>
+      <input matInput formControlName="fullName" type="text" />
+    </mat-form-field>
+
+    <div class="flex gap--32 mt--32">
+      <mat-form-field appearance="fill" class="flex--1">
+        <mat-label>Rol</mat-label>
+        <mat-select formControlName="role">
+          <mat-option *ngFor="let role of roles" [value]="role">
+            {{ role }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="flex--1">
+        <mat-label>Data angajarii</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="hiredOn" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="flex gap--32 mt--32">
+      <mat-form-field appearance="fill">
+        <mat-label>Varsta</mat-label>
+        <input matInput formControlName="age" type="number" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="flex--1">
+        <mat-label>Adresa</mat-label>
+        <input matInput formControlName="address" type="text" />
+      </mat-form-field>
+    </div>
+
+    <div class="flex align--center gap--32">
+      <div class="flex--column flex--1">
+        <mat-label class="mb--8">Selecteaza gen</mat-label>
+        <mat-radio-group aria-label="Selecteaza gen" formControlName="gender">
+          <mat-radio-button value="male" class="mr--32" color="primary">Barbat</mat-radio-button>
+          <mat-radio-button value="female" color="primary">Femeie</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <mat-slide-toggle class="flex--1 mt--24" formControlName="isActive" color="primary">
+        Este activ contul?
+      </mat-slide-toggle>
+    </div>
+  </form>
+
+  <div class="flex gap--32 mt--64">
+    <button
+      *ngIf="!data.onEditMode"
+      (click)="save()"
+      color="accent"
+      class="flex--1"
+      mat-raised-button
+    >
+      Adauga angajat
+    </button>
+    <button
+      *ngIf="data.onEditMode"
+      (click)="save()"
+      color="accent"
+      class="flex--1"
+      mat-raised-button
+    >
+      Salveaza angajat
+    </button>
+    <button (click)="close()" mat-raised-button>Inapoi</button>
+  </div>
+</div>

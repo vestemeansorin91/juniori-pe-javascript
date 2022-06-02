@@ -1,0 +1,53 @@
+$main-color: #147bc4;
+$secondary-color: #a09b9b;
+
+$success-color: #198754;
+$warning-color: #c4c43b;
+$error-color: #780e0c;
+
+.color--main {
+  color: $main-color;
+}
+
+.color--secondary {
+  color: $secondary-color;
+  transition: all 0.3s ease-in-out;
+
+  &__hovered {
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+.color--error {
+  color: $error-color;
+
+  &__hovered {
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+.color--red {
+  color: #a8291e;
+}
+
+.color--success {
+  color: $success-color;
+
+  &__hovered {
+    &:hover {
+      color: #3d691e;
+    }
+  }
+}
+
+.color--blue {
+  color: #3867d6;
+}
+
+.color--pink {
+  color: #a55eea;
+}

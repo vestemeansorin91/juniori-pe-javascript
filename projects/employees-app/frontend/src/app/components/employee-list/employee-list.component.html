@@ -1,0 +1,126 @@
+<h1>Angajatii lu' peste</h1>
+<div class="employees-table">
+  <button (click)="createEmployee()" color="accent" class="ml--24" mat-raised-button>
+    <i class="las la-plus-circle"></i>
+    Adauga angajat nou
+  </button>
+  <table mat-table [dataSource]="dataSource">
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID.</th>
+      <td mat-cell *matCellDef="let employee">{{ employee.id }}</td>
+    </ng-container>
+
+    <!-- Full Name Column -->
+    <ng-container matColumnDef="fullName">
+      <th mat-header-cell *matHeaderCellDef>Full name</th>
+      <td mat-cell *matCellDef="let employee">{{ employee.fullName }}</td>
+    </ng-container>
+
+    <!-- Active Column -->
+    <ng-container matColumnDef="isActive">
+      <th mat-header-cell *matHeaderCellDef>
+        <div class="flex--1 justify--center">Active</div>
+      </th>
+      <td mat-cell *matCellDef="let employee">
+        <div class="flex--1 justify--center">
+          <span *ngIf="employee.isActive" class="material-symbols-outlined color--success">
+            done
+          </span>
+          <span *ngIf="!employee.isActive" class="material-symbols-outlined color--error">
+            close
+          </span>
+        </div>
+      </td>
+    </ng-container>
+
+    <!-- Role Column -->
+    <ng-container matColumnDef="role">
+      <th mat-header-cell *matHeaderCellDef>
+        <div class="flex--1 justify--center">Role</div>
+      </th>
+      <td mat-cell *matCellDef="let employee">
+        <div class="flex--1 justify--center">
+          <span class="chip" [ngClass]="'role-' + employee.role">
+            {{ employee.role }}
+          </span>
+        </div>
+      </td>
+    </ng-container>
+
+    <!-- Age Column -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef>
+        <div class="flex--1 justify--center">Age</div>
+      </th>
+      <td mat-cell *matCellDef="let employee">
+        <div class="flex--1 justify--center">{{ employee.age }} ani</div>
+      </td>
+    </ng-container>
+
+    <!-- Hired On Column -->
+    <ng-container matColumnDef="hiredOn">
+      <th mat-header-cell *matHeaderCellDef>Hired On</th>
+      <td mat-cell *matCellDef="let employee">{{ employee.hiredOn | date: 'dd/MM/yyyy' }}</td>
+    </ng-container>
+
+    <!-- Gender Column -->
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef class="width--60">
+        <div class="flex--1 justify--center"></div>
+      </th>
+      <td mat-cell *matCellDef="let employee" class="width--60">
+        <div class="flex--1 justify--center">
+          <span
+            *ngIf="employee.gender === 'male'"
+            class="material-symbols-outlined color--blue fs--32"
+          >
+            man
+          </span>
+          <span
+            *ngIf="employee.gender === 'female'"
+            class="material-symbols-outlined color--pink fs--32"
+          >
+            woman
+          </span>
+        </div>
+      </td>
+    </ng-container>
+
+    <!-- Address Column -->
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef>Address</th>
+      <td mat-cell *matCellDef="let employee">
+        <span *ngIf="employee.address; else noAddressTpl">{{ employee.address }}</span>
+        <ng-template #noAddressTpl>
+          <em class="color--secondary">Nicio adresa completata</em>
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let employee">
+        <span class="flex--1 justify--end">
+          <i (click)="removeEmployee(employee.id, employee)" class="las la-trash mr--8"></i>
+          <i (click)="editEmployee(employee)" class="las la-pen"></i>
+        </span>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    #paginator
+    [length]="pagination.total"
+    [pageSize]="pagination.pageSize"
+    [pageIndex]="pagination.pageNumber"
+    [hidePageSize]="true"
+    (page)="paginationChanged($event)"
+    aria-label="Select page of periodic employees"
+  >
+  </mat-paginator>
+</div>

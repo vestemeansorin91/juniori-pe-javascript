@@ -1,0 +1,17 @@
+<div class="flex--column">
+  <h1>Stergi angajatul asta de cacao?</h1>
+
+  <div class="flex flex--1 gap--32 mt--64">
+    <button
+      *ngIf="!data.onEditMode"
+      (click)="close(true)"
+      color="accent"
+      class="flex--1"
+      mat-raised-button
+    >
+      Sterge angajat
+    </button>
+
+    <button (click)="close()" mat-raised-button>Inapoi</button>
+  </div>
+</div>

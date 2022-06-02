@@ -1,0 +1,29 @@
+.employees-table {
+  margin: 0 20%;
+  padding: 16px 0;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+
+  table {
+    width: 100%;
+  }
+}
+
+.chip {
+  width: fit-content;
+  font-weight: 500;
+  font-size: 14px;
+  background-color: grey;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 16px;
+}
+
+.role- {
+  &User {
+    background-color: #8c7ae6;
+  }
+  &Admin {
+    background-color: #273c75;
+  }
+}
