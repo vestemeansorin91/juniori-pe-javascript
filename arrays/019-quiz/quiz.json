@@ -1,11 +1,1 @@
-{
-  "questions": [
-    {
-      "id": 1,
-      "question": "Ce faci azi?",
-      "answers": ["Bine", "Rau"],
-      "correctAnswer": "Bine",
-      "points": 20
-    }
-  ]
-}
+{}
