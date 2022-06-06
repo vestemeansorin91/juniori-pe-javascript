@@ -1,0 +1,24 @@
+{
+  "quizesSteps": [
+    {
+      "question": "Cate picioare are un caine?",
+      "answers": ["3 picioare", "5 picioare", "4 picioare", "1 picior"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Cati dinti are o oaie?",
+      "answers": [31, 55, 11, 31, 67],
+      "correctAnswer": 3
+    },
+    {
+      "question": "In ce an suntem",
+      "answers": ["2021", "2022", "2023", "2024"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Ce da vaca?",
+      "answers": ["lapte", "branza", "lana"],
+      "correctAnswer": 0
+    }
+  ]
+}
