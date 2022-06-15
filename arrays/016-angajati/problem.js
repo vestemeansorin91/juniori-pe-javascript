@@ -23,62 +23,99 @@
 
    TIPS: daca vi se pare prea greu sa incepeti cu array de obiecte , puteti incepe cu array de string-uri.
    TIPS: in folderul resources/arrays si resources/objects aveti toate functiile pe care le-am discutat.
-
 */
+console.clear();
 
-let employees = [];
+let listOfEmployees = [];
+let idCounter = 1;
 
-let employeeCounter = 1;
-
-let employee = {
-  id: employeeCounter,
-  name: 'Sorin Vestemean',
+const employee1 = {
+  name: 'Mariusica',
   isActive: true,
   location: 'Romania',
-  role: 'Admin'
+  role: 'Tester'
 };
 
-createEmployee(employee);
-createEmployee(employee);
+createEmployeeFromObject(employee1);
+
+function createEmployeeFromObject(input) {
+  const newEmployee = {
+    ...input,
+    id: idCounter
+  };
+  listOfEmployees.push(newEmployee);
+  idCounter++;
+}
+
+// TODO
+function updateEmployeeFromObject(id, updateEmployee) {}
+
+createEmployee('Alex', false, 'Romania', 'Tester');
+createEmployee('Florin', true, 'Romania', 'QA');
+createEmployee('Petrut', false, 'Project Manager', 'Romania');
+createEmployee('Alex', false, 'Romania', 'Tester');
+createEmployee('Florin', true, 'Romania', 'QA');
+
+// deleteEmployeeById(1);
+// deleteEmployeeByName("Florin");
+
+toggleEmployeeActiveState(3);
+toggleEmployeeActiveState(3);
+
+findEmployeeByNameAndUpdate('Petrut', 'Dana', true, 'Romania', 'Analist Financiar');
 getEmployees();
 
-function createEmployee(employee) {
-  employees.push(employee);
-  employeeCounter++;
-}
 function getEmployees() {
-  console.log(employees);
+  console.log(listOfEmployees);
 }
 
-function updateEmployee(employeeId, employee) {}
+function createEmployee(paramName, paramIsActive, paramLocation, paramRole) {
+  listOfEmployees.push({
+    id: idCounter,
+    name: paramName,
+    isActive: paramIsActive,
+    location: paramLocation,
+    role: paramRole
+  });
 
-function deleteEmployee(employeeId) {}
+  idCounter++;
+}
 
-/* 
-  *BONUS 2*
-
-  Faceti asta DOAR daca ati terminat ce e deasupra si ati testat.
-
-  setTimeout(() => {
-  const randomFnCall = Math.floor(Math.random() * 3);
-
-  if (randomFnCall === 0) {
-    console.log('Se apeleaza createEmployee');
-    createEmployee(employee);
-    getEmployees();
+function findEmployeeByNameAndUpdate(employeeName, name, isActive, location, role) {
+  for (let i = 0; i < listOfEmployees.length; i++) {
+    if (listOfEmployees[i].name === employeeName) {
+      listOfEmployees[i].name = name;
+      listOfEmployees[i].isActive = isActive;
+      listOfEmployees[i].location = location;
+      listOfEmployees[i].role = role;
+    }
   }
+}
 
-  if (randomFnCall === 1) {
-    console.log('Se apeleaza updateEmployee');
-    updateEmployee(employeeId, employee);
-    getEmployees();
+function deleteEmployeeById(paramId) {
+  for (let i = 0; i < listOfEmployees.length; i++) {
+    if (listOfEmployees[i].id === paramId) {
+      console.log('Employee was deleted');
+      return listOfEmployees.splice(i, 1);
+    }
   }
+  console.log('Employee not found!');
+}
 
-  if (randomFnCall === 2) {
-    console.log('Se apeleaza deleteEmployee');
-    deleteEmployee(employeeId);
-    getEmployees();
+function deleteEmployeeByName(paramName) {
+  for (let i = 0; i < listOfEmployees.length; i++) {
+    if (listOfEmployees[i].name === paramName) {
+      console.log('Employee was deleted');
+      return listOfEmployees.splice(i, 1);
+    }
   }
-}, 4000);
+  console.log('Employee not found!');
+}
 
-*/
+function toggleEmployeeActiveState(id) {
+  for (let i = 0; i < listOfEmployees.length; i++) {
+    if (listOfEmployees[i].id === id) {
+      listOfEmployees[i].isActive = !listOfEmployees[i].isActive;
+    }
+  }
+}

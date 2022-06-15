@@ -178,3 +178,15 @@ function gameIsOver() {
     return false;
   }
 }
+
+// &&
+// TRUE TRUE ====> TRUE
+// TRUE FALSE ====> FLASE
+// FALSE FALSE ====> FLASE
+// FLASE TRUE ====> FLASE
+
+// ||
+// TRUE TRUE ====> TRUE
+// TRUE FALSE ====> TRUE
+// FALSE FALSE ====> FALSE
+// FLASE TRUE ====> TRUE
